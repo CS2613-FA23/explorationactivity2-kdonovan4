@@ -16,7 +16,7 @@ Additionally PyAutoGUI uses the message box functions from PyMsgBox to display v
 For example, this code:    
 ```pyautogui.confirm(text='This is a TAS (tool assistited speedrun) of my game from Exploration Activity 1\nDo you wish to proceed?', buttons=['Heck Ya', 'No Way'])```  
 Generates this message box:  
-![TextBox](https://i.imgur.com/ytwD3Z4.png)  
+![TextBox](https://imgur.com/aWWpxOw)
 
 The final functionality is the screenshot function. PyAutoGUI can take and parse images in order to locate objects on screen. This can be used in order to click on certain spots or perform inputs when something comes up on screen. I did not end up using this functionlity but it deserves to be mentioned regardless.
 
