@@ -21,4 +21,4 @@ Additionally, it shows off much of what PyAutoGUI has to offer, including a mous
 The program will prompt you through a couple of message boxes to ensure that the game is set up properly, than if it is set up properly the game will run through on it's own. Make sure not to input any buttons on your own after pressing 'Done'. Because of processing times and how tight the jumps are, it may take a few run throughs to get a completion or it may not be possible on your pc.  
 
 If you are unable to get a completion here is a recording of it being done on my pc, with the inputs shown in the top left corner:  
-![Completion](https://imgur.com/pBaz4Wa.mp4)
+[Completion](https://imgur.com/pBaz4Wa)
