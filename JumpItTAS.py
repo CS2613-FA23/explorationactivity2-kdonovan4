@@ -22,43 +22,53 @@ screenWidth, screenHeight = pyautogui.size()
 # Display the first message box
 option = pyautogui.confirm(text='This is a TAS (tool assistited speedrun) of my game from Exploration Activity 1\nDo you wish to proceed?', buttons=['Heck Ya', 'No Way'])
 
+
 # Good ending
 if option == "Heck Ya":
-	pyautogui.alert(text='Make sure the game is in the middle of your main monitor and not covered by another window', button='Done')
-	pyautogui.click(x= screenWidth/2, y= screenHeight/2)
-	t = Timer()
-	t.start()
+	playAgain = True
+	while(playAgain):
+		pyautogui.alert(text='Make sure the game is in the middle of your main monitor and not covered by another window', button='Done')
+		pyautogui.click(x= screenWidth/2, y= screenHeight/2)
+		t = Timer()
+		t.start()
 
-	# First Jump
-	pyautogui.keyDown('w')
-	pyautogui.keyDown('d')
-	sleep(0.17)
-	pyautogui.keyUp('w')
-	pyautogui.keyUp('d')
+		# First Jump
+		pyautogui.keyDown('w')
+		pyautogui.keyDown('d')
+		sleep(0.17)
+		pyautogui.keyUp('w')
+		pyautogui.keyUp('d')
 
 
-	# Second Jump
-	with pyautogui.hold('d'):
-			pyautogui.press(['w'])
-	pyautogui.keyDown('d')
-	sleep(0.45)
-	pyautogui.keyUp('d')
+		# Second Jump
+		with pyautogui.hold('d'):
+				pyautogui.press(['w'])
+		pyautogui.keyDown('d')
+		sleep(0.45)
+		pyautogui.keyUp('d')
 
-	#Third Jump
-	pyautogui.press('w')
-	pyautogui.keyDown('d')
-	sleep(0.22)
-	pyautogui.keyUp('d')
+		#Third Jump
+		pyautogui.press('w')
+		pyautogui.keyDown('d')
+		sleep(0.22)
+		pyautogui.keyUp('d')
 
-	# Ending
-	sleep(0.08)
-	pyautogui.keyDown('d')
-	sleep(0.25)
-	pyautogui.keyUp('d')
+		# Ending
+		sleep(0.08)
+		pyautogui.keyDown('d')
+		sleep(0.25)
+		pyautogui.keyUp('d')
 
-	pyautogui.alert(text=f"Completed in: {t.stop():0.2f} seconds\nGame will now reset.", button='Cool')
-	pyautogui.press('r')
+		pyautogui.alert(text=f"Completed in: {t.stop():0.2f} seconds\nGame will now reset.", button='Cool')
+		pyautogui.press('r')
 
+		sleep(0.5)
+
+		pa = pyautogui.confirm(text='Would you like to run this TAS again?', buttons=['Yes Please', 'No Thank You'])
+		if pa == "No Thank You":
+			pyautogui.alert(text="Thank you for watching :D", button='No Problem')
+			playAgain = False
+	
 # Bad Ending
 else:
 	pyautogui.alert(text='Wow, rude', button='I\'m sorry')
